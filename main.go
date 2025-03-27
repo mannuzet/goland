@@ -3,8 +3,7 @@ package main
 import "fmt"
 
 func main(){
-	var number int
-	fmt.Print("Type a number:")
-	fmt.Scan(&number)
-	fmt.Println("The typed number is", number)
+	var x int = 10
+	x += 5
+	fmt.Print("o valor de x é:", x)
 }
