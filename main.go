@@ -3,17 +3,16 @@ package main
 import "fmt"
 
 func main(){
- a, b := 10, 3
- fmt.Println("the sum is:", a + b)
- fmt.Println("the subtration is:", a - b)
- fmt.Println("the mutiplication is:", a * b)
- fmt.Println("the divison is:", a / b)
- fmt.Println("the rest of the division is:", a % b)
-
- a++
- fmt.Println("increase a", a)
-
- if a > 0  && b > 0 {
-	fmt.Println("Positive numbers")
- }
+	var number1 int
+	var number2 int
+ 	fmt.Println("Type one number:")
+ 	fmt.Scan(&number1)
+	fmt.Println("Type another number")
+	fmt.Scan(&number2)
+    
+ fmt.Println("the sum is:", number1 + number2)
+ fmt.Println("the subtration is:", number1 - number2)
+ fmt.Println("the mutiplication is:", number1 * number2)
+ fmt.Println("the divison is:", number1 / number2)
+ fmt.Println("the rest of the division is:", number1 % number2)
 }
