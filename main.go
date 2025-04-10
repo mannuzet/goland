@@ -3,7 +3,7 @@ package main
 import (
 "fmt"  
 "strings"
- "sort"
+"sort"
 )
 
 func main() {
@@ -23,5 +23,31 @@ func main() {
     sort.Strings(names)
     fmt.Println(names)
     fmt.Println(sort.SearchStrings(names, "Sabrina"))
-   
+   x :=0
+
+   for x < 5 {
+   fmt.Println(x)
+   x++
+}
+
+for i:=0; i < 5; i++{
+    fmt.Println("for 2:", i)
+}
+
+for i:=0; i <len(names); i++{
+    fmt.Println(names[i])
+}
+for index, value := range names{
+    fmt.Println("the index is:", index, "and the value is:", value)
+}
+
+for index, value := range ages{
+    fmt.Println("the index is:", index, "and the value is:", value)
+}
+
+superheros := []string{"Deadpool", "Spider-man", "Batman"}
+
+for index, value := range superheros{
+    fmt.Println("The hero number is:", index, "the hero name is:", value)
+}
 }
