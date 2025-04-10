@@ -1,22 +1,33 @@
 package main
 
 import (
-	"fmt"
+    "fmt"
 )
 
 func main() {
-	var numbers [5]int
-	var sum int
+    ages := 45
+    fmt.Println(ages <= 50)
+    fmt.Println(ages >= 50)
+    fmt.Println(ages == 50)
+    fmt.Println(ages != 50)
 
-	// Slice
-	fmt.Println("Type five numbers:")
-
-	for i := 0; i < 5; i++ {
-		fmt.Printf("Number %d: ", i+1)
-		fmt.Scanln(&numbers[i])
-		sum += numbers[i]
-	}
-
-	// Slice
-	fmt.Printf("The total sum is: %d\n", sum)
+    if ages < 50 {
+      fmt.Println("Less than 30 years")
+    } else if ages < 40 {
+      fmt.Println("Less than 40 years")
+   } else { 
+      fmt.Println("Isn't less than 40 years")
+   }
+   names := []string{"Emanuela", "Isabelly", "Isadora"}
+   for index, value := range names {
+      if index == 1 {
+         fmt.Println("Continue after the position", index, "and value", value)
+         continue
+      }
+      if index > 2 {
+         fmt.Println("Leave after" ,index)
+         break
+      }
+      fmt.Println("Value:" ,value)
+   }
 }
