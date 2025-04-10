@@ -5,29 +5,21 @@ import (
 )
 
 func main() {
-    ages := 45
-    fmt.Println(ages <= 50)
-    fmt.Println(ages >= 50)
-    fmt.Println(ages == 50)
-    fmt.Println(ages != 50)
+    var idade int
 
-    if ages < 50 {
-      fmt.Println("Less than 30 years")
-    } else if ages < 40 {
-      fmt.Println("Less than 40 years")
-   } else { 
-      fmt.Println("Isn't less than 40 years")
-   }
-   names := []string{"Emanuela", "Isabelly", "Isadora"}
-   for index, value := range names {
-      if index == 1 {
-         fmt.Println("Continue after the position", index, "and value", value)
-         continue
-      }
-      if index > 2 {
-         fmt.Println("Leave after" ,index)
-         break
-      }
-      fmt.Println("Value:" ,value)
-   }
+    fmt.Print("Digite sua idade: ")
+    _, err := fmt.Scan(&idade)
+
+    if err != nil {
+        fmt.Println("Erro ao ler a idade. Certifique-se de digitar um número.")
+        return
+    }
+
+    if idade < 18 {
+        fmt.Println("Você é menor de idade.")
+    } else if idade <= 60 {
+        fmt.Println("Você é adulto.")
+    } else {
+        fmt.Println("Você é idoso.")
+    }
 }
