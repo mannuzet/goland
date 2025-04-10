@@ -5,21 +5,41 @@ import (
 )
 
 func main() {
-    var idade int
 
-    fmt.Print("Digite sua idade: ")
-    _, err := fmt.Scan(&idade)
+    var saldo float64
 
-    if err != nil {
-        fmt.Println("Erro ao ler a idade. Certifique-se de digitar um número.")
-        return
-    }
+    fmt.Print("Digite o saldo inicial: R$ ")
+    fmt.Scan(&saldo)
 
-    if idade < 18 {
-        fmt.Println("Você é menor de idade.")
-    } else if idade <= 60 {
-        fmt.Println("Você é adulto.")
-    } else {
-        fmt.Println("Você é idoso.")
+    for {
+        var comando string
+        var valor float64
+
+        fmt.Printf("\nSaldo atual: R$ %.2f\n", saldo)
+
+        fmt.Print("\nDigite o comando (saque, deposito ou sair): ")
+        fmt.Scan(&comando)
+
+        if comando == "sair" {
+            fmt.Println("Saindo do programa...")
+            break
+        }
+
+        fmt.Print("Digite o valor: R$ ")
+        fmt.Scan(&valor)
+
+        if comando == "saque" {
+            if valor > saldo {
+                fmt.Println("Saldo insuficiente para realizar o saque.")
+            } else {
+                saldo -= valor
+                fmt.Printf("Saque de R$ %.2f realizado com sucesso.\n", valor)
+            }
+        } else if comando == "deposito" {
+            saldo += valor
+            fmt.Printf("Depósito de R$ %.2f realizado com sucesso.\n", valor)
+        } else {
+            fmt.Println("Comando inválido. Tente novamente.")
+        }
     }
 }
