@@ -1,22 +1,24 @@
 package main
 
-import  "fmt";
+import (
+	"fmt"
+)
 
-func main(){
-capitais := map[string]string{
-    "SP" : "São Paulo",
-    "RJ" : "Rio de Janeiro",
-    "ES" : "Espírito Santo",
-    "AC" : "Acre",
-}
-capitais["BH"] = "Belo Horizonte"
+func main() {
+	// string
+	estoque := map[string]int{
+		"coxinha":       10,
+		"pão de queijo": 15,
+		"refrigerante":  20,
+	}
 
-for k,v := range capitais {
-    fmt.Println("Sigla, Nome", k, v)
-}
-delete(capitais, "AC")
+	// string
+	estoque["coxinha"] -= 2
+	estoque["pão de queijo"] -= 1
 
-for k,v := range capitais {
-    fmt.Println("Sigla, Nome", k, v)
-}
+	// string
+	fmt.Println("Estoque restante:")
+	for item, quantidade := range estoque {
+		fmt.Printf("%s: %d\n", item, quantidade)
+	}
 }
